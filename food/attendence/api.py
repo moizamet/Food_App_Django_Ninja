@@ -13,6 +13,10 @@ router=Router()
 def home(request):
     return {"Status":"Success"}
 
+@router.get("/overall/info")
+def home(request):
+    return {"Status":"Service Status UP", "Application":"Food APIs"}
+
 @router.get("/protected",auth=JWTAuth())
 def getProtected(request):
     print("Protected Route")
